@@ -131,3 +131,123 @@
   .film-progress { display: none; }
   .film-credits { position: fixed; }
 }
+
+/* A longer editorial journey, with deliberate space for the field notes. */
+.parallax--journey { height: 4200svh; }
+.film-meta { right: 13rem; }
+.film-caption { bottom: 7%; max-width: 55%; }
+.film-source { position: absolute; bottom: 7%; right: 5%; min-height: 44px; padding: 0.3rem 0; color: inherit; font-size: 0.8rem; line-height: 1.5; text-underline-offset: 0.25em; pointer-events: auto; }
+.film-source-name { display: block; font-size: 0.65rem; opacity: 0.8; }
+.film-scene--patan .film-editorial { top: 19%; }
+.film-scene--patan .film-shade { background: linear-gradient(90deg, #211b18b8, transparent 80%), linear-gradient(0deg, #211b18bd, transparent 40%); }
+.film-scene--wheels { background: #13272c; }
+.film-scene--wheels .film-photo-frame { right: 48%; }
+.film-scene--wheels .film-editorial { left: 57%; width: 38%; top: 23%; }
+.film-scene--wheels .film-title { font-size: 7.4vw; }
+.film-scene--wheels .film-shade { background: linear-gradient(90deg, transparent 30%, #13272c 55%); }
+.film-scene--hiti .film-editorial { top: 17%; }
+.film-scene--hiti .film-shade { background: linear-gradient(90deg, #091f2bcc, transparent 85%), linear-gradient(0deg, #091f2bcc, transparent 50%); }
+.film-scene--wild .film-editorial, .film-scene--mustang .film-editorial, .film-scene--gokyo .film-editorial { top: 16%; }
+.film-scene--wild .film-title, .film-scene--mustang .film-title, .film-scene--gokyo .film-title { font-size: 10vw; }
+.film-scene--wild .film-shade { background: linear-gradient(180deg, #091b13c9, transparent 65%), linear-gradient(0deg, #091b13d9, transparent 38%); }
+.film-scene--mustang .film-shade, .film-scene--gokyo .film-shade { background: linear-gradient(90deg, #0a2635b8, transparent 85%), linear-gradient(0deg, #0a2635c9, transparent 40%); }
+.film-essay { background: #e9e1d0; color: #26362d; }
+.film-essay .film-editorial { top: 18%; left: 7%; width: 86%; }
+.film-essay .film-title { font-size: clamp(4rem, 8vw, 8.5rem); }
+.film-essay .film-copy { max-width: 55ch; font-size: clamp(1rem, 1.3vw, 1.2rem); }
+.film-detail { max-width: 65ch; margin: 1.2rem 0 0; font-size: clamp(1rem, 1.25vw, 1.15rem); line-height: 1.65; text-wrap: pretty; }
+.film-mark { position: absolute; bottom: 4%; right: 5%; color: currentColor; opacity: 0.06; font: 700 clamp(12rem, 29vw, 35rem)/0.8 'Barlow Condensed', Impact, sans-serif; letter-spacing: -0.04em; pointer-events: none; z-index: -1; }
+.film-notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 65rem; margin: 2rem 0 0; }
+.film-notes > div { border-top: 1px solid currentColor; padding-top: 1rem; }
+.film-notes dt { font-size: 1.1rem; font-weight: bold; }
+.film-notes dd { margin: 0.6rem 0 0; max-width: 25ch; font-size: 1rem; line-height: 1.6; }
+.film-scene--seven { background: #14232b; color: #fff8eb; }
+.film-scene--water { background: #0e3545; color: #d6ede4; }
+.film-scene--tharu { background: #82382a; color: #fff1d7; }
+.film-scene--rain { background: #ddbd7e; color: #322d23; }
+.film-scene--ice { background: #d8e8e9; color: #153241; }
+.film-sound { position: fixed; top: max(1rem, env(safe-area-inset-top)); right: max(1rem, env(safe-area-inset-right)); z-index: 20; pointer-events: auto; }
+.film-sound button { display: flex; align-items: center; gap: 0.65rem; min-height: 44px; padding: 0.65rem 0.9rem; border: 1px solid #fff8eb40; border-radius: 2px; background: #14232be8; color: #fff8eb; cursor: pointer; font: 0.75rem/1.4 Arial, sans-serif; }
+.sound-bars { display: flex; align-items: center; gap: 3px; height: 15px; }
+.sound-bars i { width: 2px; height: 3px; background: currentColor; transition: height 0.3s; }
+.sound-bars--on i { height: 9px; }
+.sound-bars--on i:nth-child(2) { height: 15px; }
+.sound-bars--on i:nth-child(3) { height: 6px; }
+.sound-status:empty { display: none; }
+.sound-status { display: block; max-width: 20ch; padding: 0.7rem; background: #14232b; color: #fff8eb; font-size: 0.8rem; }
+.film-scene--finale .film-end-actions { bottom: 9%; }
+.film-credits h3 { font: 700 clamp(2rem, 4vw, 4rem)/1 'Barlow Condensed', Impact, sans-serif; margin-top: 3rem; }
+.film-essay a:focus-visible { outline-color: currentColor; }
+@media (max-width: 700px) {
+  .parallax--journey { height: 3800svh; }
+  .film-meta { top: 4%; right: 8rem; font-size: 0.65rem; }
+  .film-meta span:last-child { max-width: 20ch; }
+  .film-caption { bottom: 13%; max-width: 84%; }
+  .film-source { bottom: 6%; left: 7%; right: auto; }
+  .film-essay .film-editorial { top: 15%; }
+  .film-essay .film-title { font-size: 17vw; }
+  .film-essay .film-copy { font-size: 1rem; line-height: 1.55; margin-top: 1rem; }
+  .film-detail { font-size: 1rem; line-height: 1.55; margin-top: 1rem; }
+  .film-notes { grid-template-columns: 1fr; gap: 0.65rem; margin-top: 1.1rem; }
+  .film-notes > div { padding-top: 0.5rem; display: grid; grid-template-columns: 30% 1fr; gap: 1rem; }
+  .film-notes dt { font-size: 0.95rem; }
+  .film-notes dd { margin: 0; max-width: none; font-size: 0.9rem; line-height: 1.4; }
+  .film-mark { font-size: 55vw; bottom: 15%; }
+  .film-scene--patan .film-editorial, .film-scene--hiti .film-editorial, .film-scene--mustang .film-editorial, .film-scene--gokyo .film-editorial { top: 19%; }
+  .film-scene--patan .film-title, .film-scene--hiti .film-title, .film-scene--mustang .film-title, .film-scene--gokyo .film-title { font-size: 20vw; }
+  .film-scene--wheels .film-photo-frame { inset: 39% 0 0 22%; }
+  .film-scene--wheels .film-editorial { top: 13%; left: 7%; width: 86%; }
+  .film-scene--wheels .film-title { font-size: 18vw; }
+  .film-scene--wheels .film-copy { max-width: 34ch; }
+  .film-scene--wheels .film-shade { background: linear-gradient(180deg, #13272c 36%, transparent 57%), linear-gradient(0deg, #13272cc9, transparent 45%); }
+  .film-scene--wild { background: #12251b; }
+  .film-scene--wild .film-photo-frame { inset: 47% 0 14%; }
+  .film-scene--wild .film-photo { object-fit: contain; }
+  .film-scene--wild .film-editorial { top: 13%; }
+  .film-scene--wild .film-title { font-size: 19vw; }
+  .film-scene--wild .film-shade { display: none; }
+  .film-scene--food .film-title { font-size: 20vw; }
+  .film-scene--food .film-copy { top: 45svh; font-size: 0.95rem; }
+  .film-scene--people .film-title { font-size: 21vw; }
+  .film-scene--people .film-photo-frame { top: 44%; }
+  .film-scene--people .film-caption { bottom: 8%; }
+  .film-scene--finale .film-end-actions { bottom: 9%; }
+}
+/* Native reading also serves short/landscape viewports and browser text zoom. */
+@media (prefers-reduced-motion: reduce), (max-height: 740px) {
+  .parallax--journey { height: auto; }
+  .parallax--journey .parallax__header { position: relative; height: auto; overflow: visible; }
+  .parallax--journey .parallax__visuals { position: relative; height: 100svh; }
+  .journey-film { position: relative; }
+  .film-scene { position: relative; visibility: visible; min-height: 100svh; padding: 7rem 7% 9rem; overflow: hidden; }
+  .film-scene .film-editorial { position: relative; inset: auto; width: 100%; }
+  .film-scene .film-title { font-size: clamp(3rem, 12vw, 8rem); }
+  .film-scene .film-copy, .film-scene .film-detail { position: static; width: auto; max-width: 55ch; margin-top: 1.5rem; padding: 0; background: none; }
+  .film-scene .film-caption { position: relative; inset: auto; max-width: 100%; margin-top: 2rem; }
+  .film-scene .film-source { position: relative; inset: auto; display: inline-block; margin-top: 1rem; }
+  .film-essay { min-height: auto; }
+  .film-notes { grid-template-columns: 1fr; }
+  .film-notes > div { display: block; }
+  .film-notes dd { max-width: 55ch; margin-top: 0.5rem; }
+  .film-scene--wheels .film-photo-frame, .film-scene--people .film-photo-frame, .film-scene--food .film-photo-frame, .film-scene--wild .film-photo-frame { position: relative; inset: auto; height: 55svh; min-height: 18rem; margin: 2rem 0; }
+  .film-scene--wheels .film-shade { display: none; }
+  .film-scene--people, .film-scene--food { padding-bottom: 9rem; }
+  .film-scene--people .film-meta span:last-child { color: inherit; text-shadow: none; }
+  .film-scene--people .film-caption { color: inherit; text-shadow: none; }
+  .film-scene--finale .film-title { font-size: 29vw; }
+  .film-scene--finale .film-caption { width: 100%; }
+  .film-end-actions { position: relative; inset: auto !important; margin-top: 3rem; flex-wrap: wrap; }
+  .film-progress { display: none; }
+  .film-credits { position: fixed; }
+}
+@media (max-width: 700px) and (min-height: 741px) and (prefers-reduced-motion: no-preference) {
+  .film-scene--land .film-title { font-size: 19.5vw; }
+  .film-scene--sacred .film-title { font-size: 17vw; }
+  .film-scene--wheels .film-title { font-size: 15.2vw; }
+  .film-scene--food .film-title { font-size: 18vw; }
+  .film-scene--gokyo .film-title { font-size: 17.5vw; }
+  .film-scene--ice .film-title { font-size: 16vw; }
+}
+@media (min-width: 701px) and (min-height: 741px) and (prefers-reduced-motion: no-preference) {
+  .film-scene--wheels .film-title { font-size: 6.5vw; }
+}

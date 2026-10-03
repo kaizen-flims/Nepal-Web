@@ -1,22 +1,18 @@
-# Stage 2 validation — 3 October 2026
+# Validation — 3 October 2026
 
-## GitHub Pages adjustments — 3 October 2026
+## Expanded Nepal journey
 
-- Added the permanent watermark, an always-accessible credits link, the large Prem/Kaizen credit, and explicit photographer attribution.
-- Strict TypeScript checking and the `/Nepal-Web/` production build pass. Generated HTML references resolve to output files, and all public files are copied into the build.
-- All 27 WebP images decode successfully. Mobile photography falls from 1,295,688 to 803,306 bytes (38% smaller). Original hero images and global/hero CSS remain byte-identical.
-- Phone transitions use transform/opacity handoffs. Removed scroll refreshes caused by fixed-frame journey image completion. Desktop transition masks and the opening's composition/layer travel are preserved.
-- Actual device/GPU frame-rate measurements and browser layout screenshots remain unverified; browser installation is unavailable in this execution environment.
-- DOM lifecycle checks pass for desktop, phone and reduced motion: StrictMode trigger counts, staged image mounting, Pages image URLs, credits from any scene, Escape, reversible timeline state, and removal of owned triggers after unmount.
+- Strict TypeScript checking and the production `/Nepal-Web/` Vite build pass. Generated Pages HTML references and every photography src/srcset resolve to local output files.
+- Twenty chapters contain 14 real photographs and six image-free reading chapters. All 14 image records include photographer, Commons source, licence, derivative licence and modifications. Eleven research sources appear in credits; individual factual chapters link to their sources.
+- All 39 WebP files in the output decode successfully. The six new desktop/mobile pairs total 2,385,698 bytes, 29.3% smaller than their first encodes. All mobile journey photos total 1,287,674 bytes. Only the selected viewport variants load.
+- The original three hero images and `src/styles/globals.css` are byte-identical to the preceding approved version. The hero visual markup and layer travel are unchanged. Short viewports now receive the static reading experience.
+- DOM lifecycle checks with React StrictMode pass at desktop 1440×900, phone 390×844, reduced motion and short 1440×560. Motion creates exactly two owned ScrollTriggers; static reading creates none. One journey image mounts initially; at most four mount during the animated journey. Static mode mounts all 14 pictures with lazy loading. Six field notes contain no images.
+- Desktop and phone timelines each pass 241 sampled playhead positions forward/backward. Animated opacity, visibility, masks and transform states match on reversal. Each sampled composition after the initial reveal has a visible scene. Inactive film chapters are inert.
+- Credits open from the permanent watermark event, display the large Prem/Kaizen title, all 14 photographer records and 11 research sources, and close with Escape. Modal focus is contained and restored. Background scrolling and the watermark link are disabled while the modal is open; its visible watermark remains.
+- Opt-in audio lifecycle checks with a Web Audio test double verify no AudioContext before a click, on/off button state, context closure on mute, and automatic mute/closure when the document becomes hidden. Cleanup removes owned ScrollTriggers and closes sound contexts. These checks do not measure actual speaker output.
+- Font metric checks identified several long mobile headings; their sizes were adjusted to fit their text columns. Compressed-photo contact sheet was visually inspected. Phone transitions avoid animated full-screen masks; image decode does not trigger scroll refresh.
+- `git diff --check` passes. Sources and photo descriptions distinguish Patan’s royal Tusha Hiti from Kathmandu’s restored public Yenga Hiti, and the Gokyo photograph from the Tsho Rolpa study published in 2020.
 
-## Original Stage 2 validation
+## Limits
 
-- Strict TypeScript checking and the Vite production build pass.
-- Compared against the approved Stage 1 source: the three hero image files, global/hero CSS, hero visual markup, layer travel, generation notes, package manifest/lockfile, shadcn configuration and Vite configuration are unchanged. The opening component has only the child slot, extended scroll endpoint and scoped replay listener needed for the continuation.
-- A DOM-based GSAP check sampled 191 playhead positions forward and backward for both desktop and mobile. Animated visibility, opacity, masks and transform values match in both directions. The opening restores at playhead zero, every handoff has a visible composition, and the finale controls are available at the end.
-- React StrictMode lifecycle checks passed at 1440 × 900 and 390 × 844: exactly two owned ScrollTriggers; staged image mounting; credits opening/closing and focus restoration; native/Lenis replay to zero; reduced-motion removal of scrub triggers and access to all eight photographs; no owned triggers or Lenis ticker remaining after unmount.
-- All 24 responsive WebP files were decoded successfully. Combined size is 6,061,084 bytes; a viewport downloads its selected variants rather than all sizes. Eight original photographs were inspected for visible watermarks. One watermarked candidate was excluded entirely.
-- Each photograph includes its author, source page, licence link, derivative licence and modification description. Credit links appear in the final scene. No Higgsfield capability was used.
-- `git diff --check` passes. The supervised development preview runs successfully.
-
-Live browser UI testing was unavailable because the environment does not provide the required control-browser skill. DOM checks do not verify actual browser layout, touch feel, GPU rendering, or the visual quality of every scroll frame. Those visual checks remain unverified; no browser screenshots or browser-performance measurements are claimed.
+Live browser layout, touch feel, GPU frame rates and speaker listening have not been verified. The required control-browser skill is unavailable in this execution environment. DOM checks, font metrics and file decoding do not replace device testing; no measured frame-rate gain is claimed.
