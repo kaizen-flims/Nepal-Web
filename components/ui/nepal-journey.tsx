@@ -53,6 +53,7 @@ function JourneyScenes() {
   const [loaded, setLoaded] = useState<Set<number>>(() => new Set([0]));
   const [active, setActive] = useState(-1);
   const [staticReading, setStaticReading] = useState(false);
+  const [compactScreen, setCompactScreen] = useState(false);
   const [creditsOpen, setCreditsOpen] = useState(false);
   const creditsButton = useRef<HTMLButtonElement>(null);
   const closeButton = useRef<HTMLButtonElement>(null);
@@ -70,10 +71,11 @@ function JourneyScenes() {
     gsap.registerPlugin(ScrollTrigger);
     let disposed = false, lastScene = -2;
     const media = gsap.matchMedia();
-    media.add({ motion: '(prefers-reduced-motion: no-preference) and (min-height: 741px)', reduced: '(prefers-reduced-motion: reduce)', short: '(max-height: 740px)', mobile: '(max-width: 700px)' }, (context) => {
-      const { reduced, short, mobile } = context.conditions!;
-      setStaticReading(Boolean(reduced || short));
-      if (reduced || short) {
+    media.add({ motion: '(prefers-reduced-motion: no-preference)', reduced: '(prefers-reduced-motion: reduce)', compact: '(max-height: 740px) and (orientation: landscape)', portraitReading: '(max-height: 740px) and (orientation: portrait)', mobile: '(max-width: 700px), (pointer: coarse)' }, (context) => {
+      const { reduced, compact, mobile, portraitReading } = context.conditions!;
+      setStaticReading(Boolean(reduced || portraitReading));
+      setCompactScreen(Boolean(compact));
+      if (reduced || portraitReading) {
         setLoaded(new Set(SCENES.map((_, i) => i))); setActive(-1); return;
       }
       const timeline = buildJourneyTimeline(film, root.querySelector<HTMLElement>('.parallax__visuals')!, Boolean(mobile));
@@ -121,7 +123,7 @@ function JourneyScenes() {
         {photo && <><div className="film-photo-frame">{loaded.has(index) && <picture><source media="(max-width: 700px)" srcSet={photo.mobile} /><img className="film-photo" src={photo.src} srcSet={photo.srcSet} sizes="100vw" alt={photo.alt} width={photo.width} height={photo.height} loading={staticReading ? 'lazy' : 'eager'} decoding="async" style={{ '--photo-focus': photo.focus, '--photo-focus-mobile': photo.mobileFocus } as CSSProperties} /></picture>}</div><div className="film-shade" aria-hidden="true" /></>}
         {scene.mark && <span className="film-mark" aria-hidden="true">{scene.mark}</span>}
         <div className="film-meta"><span>{String(index + 1).padStart(2, '0')} / {SCENES.length}</span><span>{scene.place}</span></div>
-        <div className="film-editorial">{scene.id === 'finale' && <p className="film-ending-intro">{scene.copy}</p>}<KineticTitle lines={scene.lines} id={scene.id} />{scene.id !== 'finale' && <p className="film-copy">{scene.copy}</p>}{scene.detail && <p className="film-detail">{scene.detail}</p>}{scene.notes && <dl className="film-notes">{scene.notes.map(note => <div key={note.label}><dt>{note.label}</dt><dd>{note.text}</dd></div>)}</dl>}</div>
+        <div className="film-editorial" data-lenis-prevent={compactScreen || undefined}>{scene.id === 'finale' && <p className="film-ending-intro">{scene.copy}</p>}<KineticTitle lines={scene.lines} id={scene.id} />{scene.id !== 'finale' && <p className="film-copy">{scene.copy}</p>}{scene.detail && <p className="film-detail">{scene.detail}</p>}{scene.notes && <dl className="film-notes">{scene.notes.map(note => <div key={note.label}><dt>{note.label}</dt><dd>{note.text}</dd></div>)}</dl>}</div>
         <p className="film-caption">{scene.caption}</p>
         {source && <a className="film-source" href={source.url} target="_blank" rel="noreferrer">Read the research <span aria-hidden="true">↗</span><span className="film-source-name">{source.label}</span></a>}
         {scene.id === 'finale' && <div className="film-end-actions"><button type="button" onClick={replay}>Return to the beginning <span aria-hidden="true">↗</span></button><button ref={creditsButton} type="button" aria-expanded={creditsOpen} aria-controls="photography-credits" onClick={openCredits}>Photography & research <span aria-hidden="true">+</span></button></div>}

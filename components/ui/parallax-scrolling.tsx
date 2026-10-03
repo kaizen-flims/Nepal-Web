@@ -32,7 +32,7 @@ export function ParallaxComponent({ children }: { children?: ReactNode }) {
     });
 
     const media = gsap.matchMedia();
-    media.add('(prefers-reduced-motion: no-preference) and (min-height: 741px)', () => {
+    media.add('(prefers-reduced-motion: no-preference) and (min-height: 741px), (prefers-reduced-motion: no-preference) and (orientation: landscape)', () => {
       const lenis = new Lenis({ lerp: 0.09, smoothWheel: true, syncTouch: false });
       const tick = (seconds: number) => lenis.raf(seconds * 1000);
       lenis.on('scroll', ScrollTrigger.update);

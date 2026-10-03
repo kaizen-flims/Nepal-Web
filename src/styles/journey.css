@@ -213,8 +213,8 @@
   .film-scene--people .film-caption { bottom: 8%; }
   .film-scene--finale .film-end-actions { bottom: 9%; }
 }
-/* Native reading also serves short/landscape viewports and browser text zoom. */
-@media (prefers-reduced-motion: reduce), (max-height: 740px) {
+/* Reduced motion stays static; compact portrait screens retain readable native flow. */
+@media (prefers-reduced-motion: reduce), (max-height: 740px) and (orientation: portrait) {
   .parallax--journey { height: auto; }
   .parallax--journey .parallax__header { position: relative; height: auto; overflow: visible; }
   .parallax--journey .parallax__visuals { position: relative; height: 100svh; }
@@ -240,7 +240,7 @@
   .film-progress { display: none; }
   .film-credits { position: fixed; }
 }
-@media (max-width: 700px) and (min-height: 741px) and (prefers-reduced-motion: no-preference) {
+@media (max-width: 700px) and (prefers-reduced-motion: no-preference) {
   .film-scene--land .film-title { font-size: 19.5vw; }
   .film-scene--sacred .film-title { font-size: 17vw; }
   .film-scene--wheels .film-title { font-size: 15.2vw; }
@@ -248,7 +248,7 @@
   .film-scene--gokyo .film-title { font-size: 17.5vw; }
   .film-scene--ice .film-title { font-size: 16vw; }
 }
-@media (min-width: 701px) and (min-height: 741px) and (prefers-reduced-motion: no-preference) {
+@media (min-width: 701px) and (prefers-reduced-motion: no-preference) {
   .film-scene--wheels .film-title { font-size: 6.5vw; }
 }
 
@@ -258,3 +258,39 @@
 .nepal-brand small { display: block; margin-top: 0.35rem; font: 500 0.75rem/1.2 Arial, sans-serif; letter-spacing: 0.08em; }
 .credits-brand-mark { display: block; margin-bottom: 1.25rem; }
 @media (max-width: 420px) { .nepal-brand { gap: 0.2rem; } .nepal-brand img { width: 30px; height: 30px; } .nepal-brand small { font-size: 0.75rem; letter-spacing: 0.03em; } }
+
+/* Short screens retain the film. Compact columns leave the photographs visible;
+   long passages can scroll natively inside their text area without clipping. */
+@media (max-height: 740px) and (orientation: landscape) and (prefers-reduced-motion: no-preference) {
+  .film-scene .film-meta { top: 4%; left: 5%; right: 13rem; font-size: 0.75rem; }
+  .film-scene .film-editorial { top: 20%; bottom: auto; left: 7%; width: 62%; max-height: 62%; overflow-y: auto; overscroll-behavior: auto; scrollbar-width: thin; pointer-events: auto; }
+  .film-scene .film-title { font-size: min(8vw, 14svh); }
+  .film-scene .film-title-line { display: block; }
+  .film-scene .film-copy { position: static; width: auto; max-width: 45ch; font-size: 1rem; line-height: 1.45; margin: 0.8rem 0 0; padding: 0; background: none; }
+  .film-scene .film-caption { bottom: 13%; left: 7%; right: auto; max-width: 58%; font-size: 0.75rem; }
+  .film-source { bottom: 13%; right: 5%; left: auto; }
+  .film-essay .film-editorial { top: 18%; width: 86%; max-height: 65%; display: grid; grid-template-columns: 36% 1fr; align-content: start; gap: 0.8rem 2rem; }
+  .film-essay .film-title { grid-column: 1; grid-row: 1 / span 3; font-size: min(5.7vw, 12svh); }
+  .film-essay .film-copy, .film-essay .film-detail, .film-essay .film-notes { grid-column: 2; max-width: none; margin: 0; font-size: 1rem; line-height: 1.45; }
+  .film-essay .film-notes { display: grid; grid-template-columns: 1fr; gap: 0.6rem; }
+  .film-essay .film-notes > div { display: grid; grid-template-columns: 31% 1fr; gap: 0.7rem; padding-top: 0.5rem; }
+  .film-essay .film-notes dt { font-size: 1rem; }
+  .film-essay .film-notes dd { max-width: none; margin: 0; font-size: 1rem; line-height: 1.4; }
+  .film-scene--people .film-photo-frame { inset: 0 0 0 45%; }
+  .film-scene--people .film-editorial, .film-scene--food .film-editorial { left: 6%; width: 37%; }
+  .film-scene--people .film-title, .film-scene--food .film-title { font-size: min(7vw, 13svh); }
+  .film-scene--people .film-caption { color: #342d23; text-shadow: none; }
+  .film-scene--food .film-photo-frame { inset: 15% 5% 18% 45%; }
+  .film-scene--wheels .film-photo-frame { inset: 0 48% 0 0; }
+  .film-scene--wheels .film-editorial { left: 57%; width: 38%; }
+  .film-scene--wheels .film-title { font-size: min(6vw, 12svh); }
+  .film-scene--wheels .film-shade { background: linear-gradient(90deg, transparent 30%, #13272c 55%); }
+  .film-scene--wild .film-photo-frame { inset: 0; }
+  .film-scene--wild .film-photo { object-fit: cover; }
+  .film-scene--wild .film-shade { display: block; background: linear-gradient(180deg, #091b13d9, transparent 65%), linear-gradient(0deg, #091b13d9, transparent 38%); }
+  .film-scene--finale .film-editorial { top: 22%; left: 5%; width: 90%; max-height: 49%; }
+  .film-scene--finale .film-title { font-size: min(29vw, 34svh); }
+  .film-ending-intro { margin-bottom: 0.8rem; font-size: 1.1rem; }
+  .film-scene--finale .film-caption { bottom: 26%; left: 5%; width: 90%; max-width: none; }
+  .film-scene--finale .film-end-actions { bottom: 13%; flex-direction: row; justify-content: space-between; gap: 1rem; }
+}
