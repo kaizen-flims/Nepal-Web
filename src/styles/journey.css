@@ -251,3 +251,10 @@
 @media (min-width: 701px) and (min-height: 741px) and (prefers-reduced-motion: no-preference) {
   .film-scene--wheels .film-title { font-size: 6.5vw; }
 }
+
+/* Nepal's two-pennant identity, shared by the site and its social preview. */
+.nepal-brand { position: absolute; z-index: 20; top: max(1rem, env(safe-area-inset-top)); left: max(1rem, env(safe-area-inset-left)); display: flex; align-items: center; gap: 0.45rem; padding: 0.35rem 0.65rem 0.35rem 0.2rem; background: #14232be8; border-radius: 2px; color: #fff8eb; font: 700 1rem/1 'Barlow Condensed', Impact, sans-serif; letter-spacing: 0.06em; }
+.nepal-brand img { flex: none; }
+.nepal-brand small { display: block; margin-top: 0.35rem; font: 500 0.75rem/1.2 Arial, sans-serif; letter-spacing: 0.08em; }
+.credits-brand-mark { display: block; margin-bottom: 1.25rem; }
+@media (max-width: 420px) { .nepal-brand { gap: 0.2rem; } .nepal-brand img { width: 30px; height: 30px; } .nepal-brand small { font-size: 0.75rem; letter-spacing: 0.03em; } }

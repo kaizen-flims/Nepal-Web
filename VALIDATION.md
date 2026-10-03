@@ -16,3 +16,11 @@
 ## Limits
 
 Live browser layout, touch feel, GPU frame rates and speaker listening have not been verified. The required control-browser skill is unavailable in this execution environment. DOM checks, font metrics and file decoding do not replace device testing; no measured frame-rate gain is claimed.
+
+
+## Dedicated logo and sharing preview
+
+- Pages production build and strict TypeScript check pass after branding changes. Static HTML contains complete Open Graph/X metadata; crawler-visible title, absolute image URL, type, 1734×907 dimensions and alt text agree with the actual PNG. Preview asset is below 5MB.
+- SVG/ICO favicons, Apple touch icon and transparent logo exports exist in the output; raster icons decode. Metadata links use `/Nepal-Web/` after build. The social image is not mounted in the React UI.
+- Mobile and reduced-motion DOM lifecycle checks continue to pass: chapter/photographer/source counts, credits keyboard controls, reversible timeline samples, staged image mounting and sound lifecycle. The original hero, story data and motion timeline remain unchanged. Generated card text and logo placement were visually inspected.
+- Instagram’s actual preview rendering/cache has not been tested in a signed-in session; the site now provides the preview image and metadata directly in its HTML. Device/browser layout limitations above still apply.

@@ -3,6 +3,7 @@
 import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { assetUrl } from '@/lib/asset-url';
 import { ParallaxComponent } from './parallax-scrolling';
 import { PHOTOGRAPHS, PHOTO_BY_ID } from '@/src/data/photographs';
 import { SCENES, SCENE_STARTS, SOURCES } from '@/src/data/journey';
@@ -137,12 +138,12 @@ function JourneyScenes() {
         else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
       }
     }}>
-      <div className="film-credits-heading"><h2>A Prem aka Kaizen Website</h2><button ref={closeButton} type="button" onClick={() => setCreditsOpen(false)}>Close ×</button></div>
+      <img className="credits-brand-mark" src={assetUrl('/brand/nepal-mark.svg')} width={64} height={64} alt="Nepal logo" /><div className="film-credits-heading"><h2>A Prem aka Kaizen Website</h2><button ref={closeButton} type="button" onClick={() => setCreditsOpen(false)}>Close ×</button></div>
       <p>All {PHOTOGRAPHS.length} journey photographs are by the creators credited below, sourced from Wikimedia Commons. They are resized, converted to WebP and cropped for this experience; each retains its linked Creative Commons licence. These photographers made the images. Prem made the website.</p>
       <ul className="photography-list">{PHOTOGRAPHS.map((photo) => <li key={photo.id}><a href={photo.source} target="_blank" rel="noreferrer">{photo.title} ↗</a><span>Photography by <strong>{photo.author}</strong></span><span><a href={photo.licenseUrl} target="_blank" rel="noreferrer">{photo.license}</a></span></li>)}</ul>
       <h3>Behind the story</h3><p>Research from Nepal Tourism Board, UNESCO, ICIMOD and scholarly work. The field notes connect to their sources so you can keep reading.</p>
       <ul className="research-list">{Object.values(SOURCES).map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a><span>{source.label}</span></li>)}</ul>
-      <p className="film-credit-note">Opening Everest composition: AI-generated imagery from the original opening.<br />Sound design: original synthesized wind, water textures and chimes; these are not location recordings. Sound starts only when you choose it.<br />Website design and development: Prem Das aka Kaizen.</p>
+      <p className="film-credit-note">Opening Everest composition and sharing card: AI-generated imagery based on the original opening.<br />Sound design: original synthesized wind, water textures and chimes; these are not location recordings. Sound starts only when you choose it.<br />Website design and development: Prem Das aka Kaizen.</p>
     </aside>
   </div>;
 }

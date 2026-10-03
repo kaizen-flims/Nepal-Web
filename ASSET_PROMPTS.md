@@ -14,3 +14,12 @@ Cinematic photographic Nepal Himalayan composition, 1536x1024 landscape canvas, 
 
 Cinematic photographic Nepal Himalayan composition, 1536x1024 landscape canvas, fixed large-format 50mm camera view, cool pale blue dawn with restrained warm sunlight from the upper left, slate-blue shadows, desaturated premium natural color, no illustration, no typography, no UI, no watermark. TRANSPARENT PNG CUTOUT with REAL alpha channel, background fully transparent. Only one adult trekker entirely seen from behind. Muted burnt-orange trekking jacket, small charcoal backpack, charcoal trousers, hiking boots, arms relaxed. Exact full-canvas layout: head centered at x=771,y=463; feet at y=758; body width about112 pixels, height295pixels. Do not crop or enlarge to fill frame: surrounding empty canvas stays fully transparent. The person looks out towards Everest. Light from upper left, natural warm rim on jacket left, cold shadow on right. No ground, no scenery, no white or black background and no painted checkerboard. Product-style photographic isolated person cutout.
 
+
+
+## Nepal sharing card — 3 October 2026
+
+Generated with the built-in image tool, one request, no retry. Output: `public/og.png`, 1734 × 907 pixels. Reference inputs: the original generated Everest background and a transparent export of the vector two-pennant mark.
+
+Prompt: Create one premium editorial NEPAL social sharing card, landscape 1200:630 aspect ratio. Use the supplied exact crimson two-pennant mark above the title and supplied Everest dawn photo as backdrop reference. Dark ink #14232b negative space on the left blending into Everest dawn on the right. Large condensed bold ivory #fff8eb “NEPAL”, secondary “COUNTLESS WORLDS”, small credit “A Prem aka Kaizen Website”. Restrained crimson #cf3340. Keep text and emblem within middle 90% width/80% height; legible at small message preview size. No extra text, people, faces, additional logos, screenshot, UI chrome, mockup, or border.
+
+This is generated brand artwork, not additional documentary photography. All 14 journey photographs remain credited in PHOTOGRAPHY.md.

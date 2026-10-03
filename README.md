@@ -33,3 +33,9 @@ One journey photograph is mounted initially. During the film, at most four neigh
 ## Validation
 
 See [VALIDATION.md](VALIDATION.md) for checks and the limitation on actual browser/device performance verification. Original asset generation notes remain in [ASSET_PROMPTS.md](ASSET_PROMPTS.md).
+
+## Nepal brand and sharing preview
+
+A minimal two-pennant mark inspired by Nepal’s flag appears in the opening, credits and favicon. Reusable transparent vector/PNG marks are in `public/brand/`. The supplied SVG supports crisp rendering at small sizes; `favicon.ico` and the 180px Apple touch icon provide raster fallbacks.
+
+`index.html` contains static Open Graph and X large-image metadata, so sharing crawlers can read it without executing React. Titles, descriptions, canonical URL, absolute image URLs, dimensions, MIME type and image alt text all point to this GitHub Pages deployment. `public/og.png` is the explicitly requested branded social card; the generated mountain artwork follows the original AI-generated Everest opening. It loads for sharing crawlers and is not requested by the page’s React UI.
