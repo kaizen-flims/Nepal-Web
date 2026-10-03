@@ -13,16 +13,11 @@ Use Node 22 or newer. `npm run build` runs strict TypeScript checking and produc
 
 ## GitHub Pages
 
-The repository is `kaizen-flims/Nepal-Web`. `.github/workflows/pages.yml` builds and deploys every push to `main`, and also supports a manual workflow run. GitHub Pages should use **GitHub Actions** as its publishing source in repository Settings → Pages. The workflow checks the production paths before uploading the build.
+The complete source is in `kaizen-flims/Nepal-Web`. The Pages workflow builds on every push to `main` and supports manual runs. Set repository Settings → Pages → Source to **GitHub Actions**.
 
-For a local Pages build:
+For a local Pages build, run `VITE_BASE_PATH=/Nepal-Web/ npm run build`. Public images, srcsets, fonts and the favicon use Vite's deployment base, so the source also supports a root host without that environment variable.
 
-```sh
-npm run build -- --base /Nepal-Web/
-node scripts/verify-build.mjs /Nepal-Web/
-```
-
-All public-image URLs and srcsets use Vite's deployment base, so the same source supports a root host or the `/Nepal-Web/` repository path. Compiled output and dependencies are excluded from source control.
+The permanent watermark reads **make with ❤️‍🩹 by premm.** and opens the credits from any scene. The credits feature **A Prem aka Kaizen Website** in large typography and explicitly credit all eight photographers, their source pages and licences.
 
 ## Project paths
 
@@ -45,13 +40,11 @@ The `@/*` alias maps to the project root. `/components/ui` matches shadcn's UI a
 
 The existing GSAP ScrollTrigger and `@studio-freight/lenis` stack is retained. One Lenis instance is driven by the GSAP ticker; touch scrolling remains native. The original hero markup, CSS, images and layer travel are unchanged. Its original 60svh motion range is retained, while the sticky camera frame receives a longer scroll runway for the continuation.
 
-One paused GSAP timeline controls the continuation. Scroll scrubs every reveal, pan, zoom, masked title and outgoing composition; reversing scroll reverses the same playhead. Desktop uses a 2100svh runway and mobile 1650svh, with separate photo crops, title placement and transition distances. Phones use transform/opacity handoffs instead of full-screen animated image masks. Only the two compositions involved in a handoff render; completed and future scenes use `display: none`, restoring correctly on reverse scroll. Cleanup reverts only the owning GSAP context and removes the Lenis ticker and replay listener; React StrictMode remains enabled.
+One paused GSAP timeline controls the continuation. Scroll scrubs every reveal, pan, zoom, masked title and outgoing composition; reversing scroll reverses the same playhead. Desktop uses a 2100svh runway and mobile 1650svh, with separate photo crops, title placement and transition distances. Cleanup reverts only the owning GSAP context and removes the Lenis ticker and replay listener; React StrictMode remains enabled.
 
-Only the first transition photograph is mounted initially. Each scene mounts its next photograph ahead of the handoff; visited photographs remain available for reverse scrolling. Images have explicit dimensions and fixed composition frames. Fonts and the opening's initial decoded images refresh measurements once; later fixed-frame photographs do not force an unnecessary scroll refresh. All fonts and images are served locally. The mobile photographs total 840,828 bytes, 35% less than their previous versions, with 27% fewer decoded pixels for the portrait and square variants.
+Only the first transition photograph is mounted initially. Each scene mounts its next photograph ahead of the handoff; visited photographs remain available for reverse scrolling. Images have explicit dimensions and fixed composition frames. Fonts and the hero's initial decoded images refresh scroll measurements; later fixed-frame photographs avoid unnecessary layout recalculations. All fonts and images are served locally. Mobile photographs total 803,306 bytes, 38% smaller than before, with smaller decoded dimensions. Phone transitions use fades and transforms instead of full-screen animated masks; desktop transitions retain their original masks.
 
 Reduced-motion visitors receive the original static opening followed by all eight readable photographic scenes without scrubbed movement or smooth scrolling. The final shot includes replay and photography credits; the credits support Escape, keyboard focus containment and focus restoration.
-
-The permanent on-screen watermark reads **make with ❤️‍🩹 by premm**. The credits feature **A Prem aka Kaizen Website** in large typography and explicitly distinguish Prem's website work from the photographers' work.
 
 ## Photography
 

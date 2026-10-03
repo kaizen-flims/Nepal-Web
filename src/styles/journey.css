@@ -1,0 +1,133 @@
+.parallax--journey { height: 2100svh; }
+.journey-film { position: absolute; inset: 0; z-index: 10; pointer-events: none; color: #fff8eb; font-family: Arial, sans-serif; }
+.film-scene { position: absolute; inset: 0; overflow: clip; visibility: hidden; isolation: isolate; contain: layout paint; background: #14232b; }
+.film-photo-frame { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
+.film-photo-frame picture { display: block; width: 100%; height: 100%; }
+.film-photo { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--photo-focus, center); }
+.film-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgb(5 19 19 / 49%), transparent 80%), linear-gradient(0deg, rgb(5 19 19 / 55%), transparent 44%); }
+.film-meta { position: absolute; top: 5.5%; left: 5%; right: 5%; display: flex; justify-content: space-between; gap: 1rem; font-size: 0.8rem; line-height: 1.4; letter-spacing: 0.08em; }
+.film-meta span:last-child { text-align: right; }
+.film-editorial { position: absolute; top: 26%; left: 7%; width: 86%; }
+.film-title { margin: 0; font-family: 'Barlow Condensed', Impact, 'Arial Narrow', sans-serif; font-size: clamp(5rem, 11.8vw, 12rem); font-weight: 700; letter-spacing: -0.025em; line-height: 0.91; }
+.film-title-line { display: block; overflow: clip; padding: 0.045em 0.015em 0.085em; margin: -0.045em -0.015em -0.085em; }
+.film-word { display: inline-block; }
+.film-copy { max-width: 29ch; margin: 1.6rem 0 0; font-size: clamp(1rem, 1.35vw, 1.25rem); line-height: 1.5; text-wrap: pretty; }
+.film-caption { position: absolute; bottom: 6%; left: 7%; margin: 0; font-size: 0.85rem; line-height: 1.4; }
+.film-scene--land .film-editorial { top: 22%; }
+.film-scene--land .film-title { font-size: clamp(5rem, 13.4vw, 14rem); }
+.film-scene--heritage .film-shade { background: linear-gradient(90deg, rgb(38 13 5 / 55%), rgb(38 13 5 / 7%)), linear-gradient(0deg, rgb(38 13 5 / 65%), transparent 55%); }
+.film-marquee { position: absolute; bottom: -0.16em; left: 35%; font-family: 'Barlow Condensed', Impact, sans-serif; font-size: 24vw; font-weight: 700; line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgb(255 248 235 / 60%); }
+.film-scene--sacred .film-editorial { top: auto; bottom: 16%; }
+.film-scene--sacred .film-title { font-size: 9vw; }
+.film-scene--sacred .film-title-line { display: inline-block; margin-right: 0.18em; }
+.film-scene--sacred .film-shade { background: linear-gradient(0deg, rgb(11 25 34 / 86%), rgb(11 25 34 / 8%) 65%); }
+.film-quiet-rule { position: absolute; top: 7%; left: 50%; width: 1px; height: 12%; background: rgb(255 248 235 / 65%); }
+.film-scene--people { background: #e9e1d0; color: #342d23; }
+.film-scene--people .film-photo-frame { left: 42%; }
+.film-scene--people .film-editorial { left: 6%; width: 40%; top: 25%; }
+.film-scene--people .film-title { font-size: 12vw; }
+.film-scene--people .film-copy { max-width: 23ch; }
+.film-scene--people .film-shade { display: none; }
+.film-scene--people .film-meta span:last-child { color: #fff8eb; text-shadow: 0 1px 8px #342d23; }
+.film-scene--food { background: #9b2e22; }
+.film-scene--food .film-photo-frame { inset: 14% 5% 14% 39%; }
+.film-scene--food .film-editorial { left: 6%; top: 26%; }
+.film-scene--food .film-title { font-size: 11vw; }
+.film-scene--food .film-copy { max-width: 26ch; width: 30%; }
+.film-scene--food .film-shade { display: none; }
+.film-scene--festival .film-editorial { top: 20%; }
+.film-scene--festival .film-shade { background: linear-gradient(180deg, rgb(24 8 20 / 65%), transparent 70%), linear-gradient(90deg, rgb(24 8 20 / 35%), transparent 65%); }
+.film-scene--adventure .film-editorial { top: 21%; }
+.film-scene--adventure .film-title { font-size: 12.8vw; }
+.film-scene--adventure .film-shade { background: linear-gradient(90deg, rgb(15 27 35 / 53%), transparent), linear-gradient(0deg, rgb(15 27 35 / 55%), transparent 40%); }
+.film-scene--finale .film-editorial { top: 27%; left: 5%; width: 90%; text-align: center; }
+.film-scene--finale .film-title { font-size: 29vw; line-height: 0.9; letter-spacing: 0.015em; }
+.film-ending-intro { margin: 0 0 1.5rem; font-size: clamp(1.1rem, 1.8vw, 1.7rem); }
+.film-scene--finale .film-caption { bottom: 18%; left: 5%; width: 90%; text-align: center; font-size: 1rem; }
+.film-scene--finale .film-shade { background: linear-gradient(180deg, rgb(18 29 35 / 15%), rgb(18 29 35 / 15%) 45%, rgb(18 29 35 / 70%)); }
+.film-end-actions { position: absolute; bottom: 6%; left: 5%; right: 5%; display: flex; justify-content: space-between; gap: 1.5rem; pointer-events: auto; }
+.film-end-actions button, .film-credits button { color: inherit; background: none; border: 0; border-bottom: 1px solid rgb(255 248 235 / 45%); padding: 0.7rem 0; min-height: 44px; font: inherit; cursor: pointer; text-align: left; }
+.film-end-actions button { font-size: 0.9rem; }
+.film-end-actions button span { margin-left: 1.5rem; }
+.journey-film button:focus-visible, .journey-film a:focus-visible { outline: 2px solid #fff8eb; outline-offset: 6px; }
+.film-progress { position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: rgb(255 248 235 / 15%); }
+.film-progress span { display: block; width: 100%; height: 100%; background: #fff8eb; transform-origin: left; }
+.film-credits { position: absolute; inset: 0; z-index: 30; padding: clamp(1.5rem, 5vw, 5rem); background: #14232b; overflow-y: auto; overscroll-behavior: contain; pointer-events: auto; line-height: 1.6; }
+.film-credits[hidden] { display: none; }
+.film-credits-heading { display: flex; align-items: start; justify-content: space-between; gap: 1.5rem; }
+.film-credits-heading h2 { font-family: 'Barlow Condensed', Impact, sans-serif; font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1; margin: 0 0 1.5rem; }
+.film-credits p { max-width: 65ch; }
+.film-credits ul { list-style: none; padding: 0; margin: 2rem 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 3rem; }
+.film-credits li { font-size: 0.9rem; }
+.film-credits li > a { font-size: 1rem; }
+.film-credits li > span { display: block; margin-top: 0.3rem; color: #bdc8cb; }
+.film-credits a { color: inherit; text-underline-offset: 0.2em; }
+.film-credit-note { color: #bdc8cb; font-size: 0.85rem; }
+.film-credits-heading h2 { max-width: 12ch; font-size: clamp(3rem, 8vw, 8rem); text-wrap: balance; }
+.film-credits { padding-bottom: 5rem; }
+.prem-watermark { position: fixed; z-index: 100; bottom: max(0.75rem, env(safe-area-inset-bottom)); right: max(0.75rem, env(safe-area-inset-right)); padding: 0.45rem 0.65rem; border: 1px solid rgb(255 248 235 / 25%); border-radius: 0.25rem; background: #14232bed; color: #fff8eb; font: 500 0.75rem/1.4 Arial, sans-serif; text-decoration: none; white-space: nowrap; }
+.prem-watermark:focus-visible { outline: 2px solid #fff8eb; outline-offset: 3px; }
+@media (max-width: 700px) {
+  .parallax--journey { height: 1650svh; }
+  .film-photo { object-position: var(--photo-focus-mobile, center); }
+  .film-meta { top: 4%; left: 7%; right: 7%; font-size: 0.7rem; letter-spacing: 0.04em; }
+  .film-editorial { top: 30%; }
+  .film-title { font-size: 20vw; }
+  .film-copy { font-size: 1rem; max-width: 28ch; margin-top: 1.1rem; }
+  .film-caption { font-size: 0.75rem; bottom: 5%; right: 7%; }
+  .film-scene--land .film-editorial { top: 25%; }
+  .film-scene--land .film-title { font-size: 22vw; }
+  .film-scene--heritage .film-editorial { top: 32%; }
+  .film-scene--heritage .film-title { font-size: 19.5vw; }
+  .film-marquee { font-size: 42vw; bottom: 9%; left: 0; }
+  .film-scene--sacred .film-editorial { bottom: 17%; }
+  .film-scene--sacred .film-title { font-size: 19vw; }
+  .film-scene--sacred .film-title-line { display: block; margin-right: 0; }
+  .film-scene--people .film-photo-frame { left: 0; top: max(45%, 25rem); }
+  .film-scene--people .film-editorial { top: 10%; left: 7%; width: 86%; }
+  .film-scene--people .film-title { font-size: 23vw; }
+  .film-scene--people .film-copy { max-width: 32ch; font-size: 0.95rem; }
+  .film-scene--people .film-meta span:last-child { color: #342d23; text-shadow: none; }
+  .film-scene--people .film-caption { color: #fff8eb; text-shadow: 0 1px 8px #342d23; }
+  .film-scene--food .film-photo-frame { inset: 43% 7% 15%; }
+  .film-scene--food .film-editorial { top: 11%; left: 7%; width: 86%; }
+  .film-scene--food .film-title { font-size: 23vw; }
+  .film-scene--food .film-copy { position: absolute; top: 47svh; width: 100%; max-width: 30ch; background: rgb(155 46 34 / 92%); padding: 0.6rem 0.8rem; margin: 0; }
+  .film-scene--festival .film-editorial { top: 25%; }
+  .film-scene--festival .film-title { font-size: 20.8vw; }
+  .film-scene--adventure .film-editorial { top: 23%; }
+  .film-scene--adventure .film-title { font-size: 21vw; }
+  .film-scene--finale .film-editorial { top: 34%; }
+  .film-scene--finale .film-title { font-size: 34vw; }
+  .film-ending-intro { font-size: 1.1rem; margin-bottom: 1.25rem; }
+  .film-scene--finale .film-caption { bottom: 27%; }
+  .film-end-actions { flex-direction: column; align-items: center; gap: 0.5rem; bottom: 6%; }
+  .film-credits ul { grid-template-columns: 1fr; }
+}
+@media (max-height: 560px) and (min-width: 701px) {
+  .film-scene .film-editorial { top: 20%; }
+  .film-scene .film-title { font-size: min(9vw, 19svh); }
+  .film-scene--sacred .film-editorial { top: auto; bottom: 16%; }
+  .film-copy { margin-top: 1rem; font-size: 1rem; }
+  .film-scene--finale .film-title { font-size: 39svh; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .parallax--journey { height: auto; }
+  .parallax--journey .parallax__header { position: relative; height: auto; overflow: visible; }
+  .parallax--journey .parallax__visuals { position: relative; height: 100svh; }
+  .journey-film { position: relative; }
+  .film-scene { position: relative; visibility: visible; min-height: 100svh; padding: 8rem 7% 12rem; }
+  .film-scene .film-editorial { position: relative; inset: auto; width: 100%; }
+  .film-scene .film-title { font-size: clamp(3.5rem, 12vw, 10rem); }
+  .film-scene .film-copy { position: static; width: auto; margin-top: 1.5rem; }
+  .film-scene--people .film-photo-frame { inset: 45% 0 0; }
+  .film-scene--people { padding-bottom: max(60svh, 26rem); }
+  .film-scene--people .film-copy { max-width: 40ch; }
+  .film-scene--people .film-caption { color: #fff8eb; text-shadow: 0 1px 8px #342d23; }
+  .film-scene--food { padding-bottom: max(60svh, 26rem); }
+  .film-scene--food .film-photo-frame { inset: 45% 7% 10%; }
+  .film-scene--food .film-copy { padding: 0; background: none; }
+  .film-scene--finale .film-title { font-size: 29vw; }
+  .film-progress { display: none; }
+  .film-credits { position: fixed; }
+}
